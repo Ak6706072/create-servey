@@ -1,0 +1,29 @@
+.create-survey {
+  padding: 5px;
+}
+.create-survey-btn-select {
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  width: 100%;
+}
+.create-survey-footer {
+  margin-top: 15px;
+}
+.create-survey-question-mark {
+  border: 1px solid gray;
+  border-right: 0px;
+  padding: 2px;
+  width: 30px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.create-survey-question {
+  width: 300px;
+}
+.create-survey-question[type="text"]:focus {
+  outline: none; /* Remove default outline and use border or box-shadow */
+}
+.create-survey-option {
+  text-align: left;
+}

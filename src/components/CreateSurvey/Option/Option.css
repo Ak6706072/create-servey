@@ -1,0 +1,23 @@
+.option {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.option-input {
+  border: 1px solid gray;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.option-plus-btn,
+.option-minus-btn {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-left: 0px;
+  border-right: 0px;
+  color: var(--danger);
+}
+.option-minus-btn {
+  border-right: 1px solid gray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
