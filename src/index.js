@@ -4,9 +4,16 @@ import "./index.css";
 import App from "./components/App/";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from "@main/index.js";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import AllReducer from "./components/redux/reducers/";
+
+const store = createStore(
+  AllReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 ReactDOM.render(
-  <Provider value={{ listOfQuestions: ["hello"], question: {} }}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById("root")
@@ -16,4 +23,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-export default Consumer;

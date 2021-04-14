@@ -9,7 +9,9 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <img src={survey} alt="survey.png" />
+        <Link to="/">
+          <img src={survey} alt="survey.png" />
+        </Link>
         <div className="app-feature">
           <Switch>
             <Route path="/" exact>

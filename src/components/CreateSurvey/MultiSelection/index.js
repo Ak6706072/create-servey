@@ -1,24 +1,33 @@
 import React from "react";
 import "./MultiSelection.css";
 import Option from "../Option";
-import Consumer from "@root/index.js";
+import { useDispatch, useSelector } from "react-redux";
+import { resetQuestion, addQuestion } from "../../redux/actions";
+
 function MultiSelection(props) {
+  const quest = useSelector((state) => state.question);
+  const dispatch = useDispatch();
+  const submitQuestion = () => {
+    const question = {
+      question: quest.question,
+      option: quest.option,
+    };
+    dispatch(addQuestion(question));
+    dispatch(resetQuestion());
+  };
+
   return (
-    <Consumer>
-      {(value) => {
-        console.log(value);
-        return (
-          <div>
-            {props.data}
-            <Option />
-            <Option />
-            <Option />
-            <Option />
-            <Option />
-          </div>
-        );
-      }}
-    </Consumer>
+    <div>
+      {props.data}
+      {quest.option.map((option) => {
+        return <Option opt={option} />;
+      })}
+      {quest.option.length === 4 ? (
+        <>
+          <button onClick={submitQuestion}>publish</button>
+        </>
+      ) : null}
+    </div>
   );
 }
 
